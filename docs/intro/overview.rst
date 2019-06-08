@@ -17,23 +17,60 @@ Our goal is to enable AI-application developers and researchers with:
 Key Concepts
 ------------
 
--  ``Agent`` is a conversational agent communicating with users in
-   natural language (text).
--  ``Skill`` fulfills user’s goal in some domain. Typically, this is
-   accomplished by presenting information or completing transaction
-   (e.g. answer question by FAQ, booking tickets etc.). However, for
-   some tasks a success of interaction is defined as continuous
-   engagement (e.g. chit-chat).
--  ``Component`` is a reusable functional part of ``Skill``.
--  ``Rule-based Models`` cannot be trained.
--  ``Machine Learning Models`` can be trained only stand alone.
--  ``Deep Learning Models`` can be trained independently and in an
-   end-to-end mode being joined in a chain.
--  ``Skill Manager`` performs selection of the ``Skill`` to generate
-   response.
--  ``Chainer`` builds an agent/component pipeline from heterogeneous
-   components (Rule-based/ML/DL). It allows to train and infer models in
-   a pipeline as a whole.
+.. glossary::
+
+    Agent
+    Conversational agent
+        a program, communicating with users in natural language (text).
+
+    Skill
+        agent's ability to fulfill user’s goal in a particular domain. Typically, this is
+        accomplished by presenting information or completing transaction
+        (e.g. answering question by FAQ, booking tickets etc.). However, for
+        some tasks success of interaction is defined as continuous
+        engagement (e.g. chit-chat).
+
+        Represented by :py:class:`Skill <deeppavlov.core.skill.skill.Skill>` class.
+
+
+    Component
+        a reusable functional part of :term:`skill`.
+
+        Represented by :py:class:`Component <deeppavlov.core.models.component.Component>` class.
+
+    Model
+        (needs definition)
+
+    Training
+        (needs definition)
+
+    Rule-based model
+        model, based on strict logic (rules).
+        Rule-based models cannot be trained.
+
+    Machine learning model
+    ML model
+        model, based on ___.
+        Can only be trained independently.
+
+    Deep learning model
+    DL model
+    Neural network
+        model, based on ___.
+        Deep learning models can be trained independently or in an
+        end-to-end mode being joined in a chain.
+
+    Skill manager
+
+         Agent's part that selects the :term:`skill` to generate response.
+
+    Chainer
+
+        Agent's part that builds an :term:`agent`/:term:`component` pipeline from heterogeneous
+        components (Rule-based/ML/DL). It allows to train and infer models in
+        a pipeline as a whole.
+
+        Represented by :py:class:`Chainer <deeppavlov.core.common.chainer.Chainer>` class.
 
 The smallest building block of the library is ``Component``.
 ``Component`` stands for any kind of function in an NLP pipeline. It can
